@@ -2,9 +2,9 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Inscription – BHM Master Class</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bleu: #00AEEF;
@@ -13,29 +13,25 @@
       --noir: #222;
       --blanc: #fff;
     }
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
       font-family: 'Inter', sans-serif;
       background-color: var(--gris);
       color: var(--noir);
       line-height: 1.6;
     }
-
     header {
       background: linear-gradient(to right, var(--bleu), var(--rose));
       padding: 50px 20px 30px;
       text-align: center;
-      color: white;
+      color: var(--blanc);
     }
-
     .logo-container {
-      background-color: white;
+      background-color: var(--blanc);
       border-radius: 50%;
       width: 100px;
       height: 100px;
@@ -44,31 +40,26 @@
       align-items: center;
       justify-content: center;
     }
-
     .logo-container img {
       width: 75%;
     }
-
     h1 {
       font-family: 'DM Serif Display', serif;
       font-size: 2em;
     }
-
     .form-container {
       max-width: 600px;
-      margin: 40px auto;
+      margin: 40px auto 60px;
+      background: var(--blanc);
       padding: 30px;
-      background: white;
       border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     }
-
     label {
       display: block;
       margin-bottom: 5px;
       font-weight: 600;
     }
-
     input, select {
       width: 100%;
       padding: 12px;
@@ -77,28 +68,30 @@
       border-radius: 8px;
       font-size: 1em;
     }
-
     button {
       background-color: var(--rose);
-      color: white;
+      color: var(--blanc);
       border: none;
       padding: 14px 30px;
       border-radius: 30px;
       font-size: 1.1em;
       cursor: pointer;
       transition: 0.3s ease;
+      width: 100%;
     }
-
-    button:hover {
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    button:hover:enabled {
       background-color: #c80073;
     }
-
     footer {
       background: var(--bleu);
-      color: white;
+      color: var(--blanc);
       text-align: center;
       padding: 20px 10px;
-      margin-top: 60px;
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -106,7 +99,7 @@
 
 <header>
   <div class="logo-container">
-    <img src="logo.png" alt="Logo BHM">
+    <img src="logo.png" alt="Logo BHM" />
   </div>
   <h1>Formulaire d'inscription</h1>
 </header>
@@ -114,19 +107,43 @@
 <div class="form-container">
   <form id="bhm-form">
     <label for="nom">Nom</label>
-    <input type="text" id="nom" name="nom" required>
+    <input type="text" id="nom" name="nom" required />
 
     <label for="prenoms">Prénoms</label>
-    <input type="text" id="prenoms" name="prenoms" required>
+    <input type="text" id="prenoms" name="prenoms" required />
+
+    <label for="email">Adresse Email</label>
+    <input type="email" id="email" name="email" required />
+
+    <label for="whatsapp">Numéro WhatsApp</label>
+    <input type="tel" id="whatsapp" name="whatsapp" required />
 
     <label for="naissance">Date de naissance</label>
-    <input type="date" id="naissance" name="naissance" required>
+    <input type="date" id="naissance" name="naissance" required />
 
     <label for="lieu">Lieu de naissance</label>
-    <input type="text" id="lieu" name="lieu" required>
+    <input type="text" id="lieu" name="lieu" required />
 
     <label for="adresse">Adresse de résidence</label>
-    <input type="text" id="adresse" name="adresse" required>
+    <input type="text" id="adresse" name="adresse" required />
+
+    <label for="jours">Quels sont les jours pendant lesquels vous pouvez suivre cette formation ?</label>
+    <select id="jours" name="jours" multiple required>
+      <option value="Lundi">Lundi</option>
+      <option value="Mardi">Mardi</option>
+      <option value="Mercredi">Mercredi</option>
+      <option value="Jeudi">Jeudi</option>
+      <option value="Vendredi">Vendredi</option>
+      <option value="Samedi">Samedi</option>
+      <option value="Dimanche">Dimanche</option>
+    </select>
+
+    <label for="mode">Préférez-vous une formation :</label>
+    <select id="mode" name="mode" required>
+      <option value="">-- Choisissez une option --</option>
+      <option value="Présentiel">En présentiel</option>
+      <option value="En ligne">À distance (en ligne)</option>
+    </select>
 
     <label for="montant">Quelle somme êtes-vous prêt à payer pour cette formation ?</label>
     <select id="montant" name="montant" required>
@@ -151,23 +168,31 @@
   <p>© 2025 BHM Communication</p>
 </footer>
 
-<!-- EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
 <script>
   (function(){
-    emailjs.init("tMmXrdRj3O_A7Nudx");
+    emailjs.init("tMmXrdRj3O_A7Nudx"); // Remplace par ta clé API EmailJS exacte
   })();
 
-  document.getElementById('bhm-form').addEventListener('submit', function(e) {
+  const form = document.getElementById('bhm-form');
+  const submitBtn = form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', function(e){
     e.preventDefault();
 
-    emailjs.sendForm('service_K2K6cbu', 'template_2qthhet', this)
-      .then(function() {
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Envoi en cours...";
+
+    emailjs.sendForm('service_perhixn', 'template_2qthhet', form)
+      .then(() => {
         alert('Inscription envoyée avec succès ! Vous allez être redirigé vers le paiement.');
         window.location.href = 'paiement.html';
-      }, function(error) {
-        alert(\"Erreur lors de l'envoi du formulaire. Veuillez réessayer.\");
-        console.error('EmailJS Error:', error);
+      })
+      .catch((error) => {
+        console.error('Erreur EmailJS:', error);
+        alert("Erreur lors de l'envoi du formulaire. Veuillez réessayer.");
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Inscription";
       });
   });
 </script>
