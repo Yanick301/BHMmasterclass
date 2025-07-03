@@ -45,10 +45,13 @@
     }
     h1 {
       font-family: 'DM Serif Display', serif;
-      font-size: 2em;
+      font-size: 2.3em;
+      line-height: 1.4;
+      font-weight: normal;
+      margin-bottom: 10px;
     }
     .form-container {
-      max-width: 600px;
+      max-width: 650px;
       margin: 40px auto 60px;
       background: var(--blanc);
       padding: 30px;
@@ -60,13 +63,18 @@
       margin-bottom: 5px;
       font-weight: 600;
     }
-    input, select {
+    input, select, textarea {
       width: 100%;
       padding: 12px;
       margin-bottom: 20px;
       border: 1px solid #ccc;
       border-radius: 8px;
       font-size: 1em;
+      font-family: 'Inter', sans-serif;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 80px;
     }
     button {
       background-color: var(--rose);
@@ -101,7 +109,7 @@
   <div class="logo-container">
     <img src="logo.png" alt="Logo BHM" />
   </div>
-  <h1>Formulaire d'inscription</h1>
+  <h1>Formulaire d'inscription à la Master Class<br>« L'Art Éloquent de Briller »</h1>
 </header>
 
 <div class="form-container">
@@ -160,7 +168,21 @@
       <option value="100000">100 000 FCFA</option>
     </select>
 
-    <button type="submit">Inscription</button>
+    <label for="objectifs">Quels sont vos objectifs ?</label>
+    <textarea id="objectifs" name="objectifs" required></textarea>
+
+    <label for="engagement">Êtes-vous engagé pour cette formation ?</label>
+    <select id="engagement" name="engagement" required>
+      <option value="">-- Choisissez une option --</option>
+      <option value="Oui je le suis">Oui je le suis</option>
+      <option value="Je doute un peu">Je doute un peu</option>
+      <option value="Pas du tout">Pas du tout</option>
+    </select>
+
+    <label for="motivations">Quelles sont vos motivations ?</label>
+    <textarea id="motivations" name="motivations" required></textarea>
+
+    <button type="submit">Envoyer mon inscription</button>
   </form>
 </div>
 
@@ -168,10 +190,11 @@
   <p>© 2025 BHM Communication</p>
 </footer>
 
+<!-- EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
 <script>
   (function(){
-    emailjs.init("tMmXrdRj3O_A7Nudx"); // Remplace par ta clé API EmailJS exacte
+    emailjs.init("tMmXrdRj3O_A7Nudx"); // Ton user ID EmailJS
   })();
 
   const form = document.getElementById('bhm-form');
@@ -192,7 +215,7 @@
         console.error('Erreur EmailJS:', error);
         alert("Erreur lors de l'envoi du formulaire. Veuillez réessayer.");
         submitBtn.disabled = false;
-        submitBtn.textContent = "Inscription";
+        submitBtn.textContent = "Envoyer mon inscription";
       });
   });
 </script>
