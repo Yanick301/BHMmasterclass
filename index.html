@@ -35,6 +35,23 @@
       position: relative;
     }
 
+    /* Image couverture dans header */
+    .cover-image {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      margin: 0 auto 20px;
+      cursor: pointer;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+      animation: fadeInDown 1s ease forwards;
+    }
+    .cover-image:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+    }
+
     .logo-container {
       background-color: white;
       border-radius: 50%;
@@ -63,6 +80,7 @@
       font-size: 1.3em;
       font-weight: 400;
       animation: fadeInDown 1.4s ease;
+      margin-bottom: 30px;
     }
 
     section.container {
@@ -70,12 +88,12 @@
       max-width: 1000px;
       margin: auto;
       animation: fadeInUp 1.3s ease;
+      color: #333;
+      font-size: 1.1em;
     }
 
-    p {
+    section.container p {
       margin-bottom: 20px;
-      font-size: 1.1em;
-      color: #333;
     }
 
     .highlight {
@@ -136,6 +154,55 @@
       margin-top: 50px;
     }
 
+    /* Lightbox styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .lightbox.active {
+      display: flex;
+    }
+    .lightbox-content {
+      position: relative;
+      max-width: 90%;
+      max-height: 90%;
+      text-align: center;
+    }
+    .lightbox-content img {
+      max-width: 100%;
+      max-height: 80vh;
+      border-radius: 10px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.7);
+    }
+    .close-btn, .download-btn {
+      position: absolute;
+      top: 10px;
+      background: var(--rose);
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      user-select: none;
+    }
+    .close-btn:hover, .download-btn:hover {
+      background: #b9006c;
+    }
+    .close-btn {
+      right: 10px;
+    }
+    .download-btn {
+      right: 90px;
+    }
+
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -161,9 +228,13 @@
 <body>
 
   <header>
+    <!-- Image couverture cliquable au-dessus du logo -->
+    <img src="affiche.jpg" alt="Affiche BHM Master Class" class="cover-image" id="coverImage" />
+
     <div class="logo-container">
       <img src="logo.png" alt="Logo BHM">
     </div>
+
     <h1>BHM Master Class</h1>
     <h2>L’Art Éloquent de Briller</h2>
   </header>
@@ -202,6 +273,49 @@
     <p>Lieu : Fondation Alexis Milido, à 100m de l’École Publique de Tanmey</p>
     <p>© 2025 BHM Communication - Service • Efficacité • Élégance</p>
   </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+      <button class="download-btn" id="downloadBtn" title="Télécharger l'affiche">⬇ Télécharger</button>
+      <button class="close-btn" id="closeBtn" title="Fermer">✕</button>
+      <img src="affiche.jpg" alt="Affiche BHM Master Class Grande" id="lightboxImage" />
+    </div>
+  </div>
+
+  <script>
+    const coverImage = document.getElementById('coverImage');
+    const lightbox = document.getElementById('lightbox');
+    const closeBtn = document.getElementById('closeBtn');
+    const downloadBtn = document.getElementById('downloadBtn');
+
+    // Ouvrir la lightbox au clic
+    coverImage.addEventListener('click', () => {
+      lightbox.classList.add('active');
+    });
+
+    // Fermer la lightbox au clic sur la croix
+    closeBtn.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+    });
+
+    // Fermer la lightbox si on clique en dehors de l'image
+    lightbox.addEventListener('click', (e) => {
+      if(e.target === lightbox) {
+        lightbox.classList.remove('active');
+      }
+    });
+
+    // Bouton téléchargement
+    downloadBtn.addEventListener('click', () => {
+      const link = document.createElement('a');
+      link.href = coverImage.src;
+      link.download = 'affiche-bhm-master-class.jpg'; // Nom du fichier téléchargé
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+  </script>
 
 </body>
 </html>
