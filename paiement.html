@@ -77,7 +77,7 @@
       color: var(--bleu);
     }
 
-    #lygos-btn {
+    #pay-btn {
       background-color: var(--rose);
       color: white;
       border: none;
@@ -88,7 +88,7 @@
       transition: 0.3s ease;
     }
 
-    #lygos-btn:hover {
+    #pay-btn:hover {
       background-color: #c80073;
     }
 
@@ -111,19 +111,43 @@
   </header>
 
   <div class="container">
-    <h2>Frais d’inscription à la BHM Master Class</h2>
+    <h2>Frais d’inscription à la BHM MasterClass</h2>
     <div class="amount">5.000 FCFA</div>
-    <button id="lygos-btn">Payer avec Lygos</button>
+    <button id="pay-btn">Payer avec FedaPay</button>
   </div>
 
   <footer>
     <p>© 2025 BHM Communication</p>
   </footer>
 
-  <!-- Script pour redirection -->
+  <!-- SDK FedaPay -->
+  <script src="https://cdn.fedapay.com/checkout.js"></script>
+
   <script>
-    document.getElementById('lygos-btn').addEventListener('click', function () {
-      window.location.href = "";
+    document.getElementById('pay-btn').addEventListener('click', function () {
+      FedaPay.init({
+        public_key: "pk_live_wqu1xyMAq-UoOmKioBNQhQwh",
+        transaction: {
+          amount: 5000,
+          description: "Paiement pour la BHM Master Class",
+          currency: {
+            iso: "XOF"
+          }
+        },
+        customer: {
+          firstname: "Client",
+          lastname: "BHM",
+          email: "client@example.com"
+        },
+        onComplete: function (response) {
+          if (response.status === 'approved') {
+            // Redirection vers reçu.html après paiement validé
+            window.location.href = "reçu.html";
+          } else {
+            alert("Paiement annulé ou non approuvé.");
+          }
+        }
+      });
     });
   </script>
 
