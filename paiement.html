@@ -77,7 +77,7 @@
       color: var(--bleu);
     }
 
-    #paytech-btn {
+    #lygos-btn {
       background-color: var(--rose);
       color: white;
       border: none;
@@ -88,7 +88,7 @@
       transition: 0.3s ease;
     }
 
-    #paytech-btn:hover {
+    #lygos-btn:hover {
       background-color: #c80073;
     }
 
@@ -113,40 +113,17 @@
   <div class="container">
     <h2>Frais d’inscription à la BHM Master Class</h2>
     <div class="amount">5.000 FCFA</div>
-    <button id="paytech-btn">Payer avec MTN Mobile Money</button>
+    <button id="lygos-btn">Payer avec Lygos</button>
   </div>
 
   <footer>
     <p>© 2025 BHM Communication</p>
   </footer>
 
-  <!-- PayTech SDK -->
-  <script src="https://cdn.paytech.sn/api/checkout-inline/v1/paytech.min.js"></script>
-
-  <!-- Script de paiement -->
+  <!-- Script pour redirection -->
   <script>
-    document.getElementById('paytech-btn').addEventListener('click', function () {
-      const checkout = new PayTechCheckout({
-        apiKey: "2e7b7b6ae65f90fb67c2c5a2916521c6d87c0dd357c0918efb43310dc422a8b3", // Ta clé publique PayTech
-        site_id: "IPN", // 🔁 Remplace ceci par ton vrai site_id dès que tu l’as
-        transaction_id: "bhm_" + Date.now(),
-        amount: 5000,
-        currency: "XOF",
-        description: "Inscription à la BHM Master Class",
-        callback: {
-          return_url: "recu.html",
-          cancel_url: "paiement.html",
-          callback_url: "" // Laisse vide si tu n'as pas encore de serveur
-        },
-        customer: {
-          name: "Martin",
-          email: "martinddm301@gmail.com",
-          phone_number: "2290196630219"
-        },
-        channels: ["mtn"]
-      });
-
-      checkout.open();
+    document.getElementById('lygos-btn').addEventListener('click', function () {
+      window.location.href = "";
     });
   </script>
 
