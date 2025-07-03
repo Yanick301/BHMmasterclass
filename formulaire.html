@@ -194,7 +194,7 @@
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
 <script>
   (function(){
-    emailjs.init("tMmXrdRj3O_A7Nudx");
+    emailjs.init("_tc9-MnSuwifV");
   })();
 
   const form = document.getElementById('bhm-form');
@@ -206,7 +206,7 @@
     submitBtn.disabled = true;
     submitBtn.textContent = "Envoi en cours...";
 
-    emailjs.sendForm('service_perhixn', 'template_2qthhet', form)
+    emailjs.sendForm('service_yhv5tpb', 'template_2qthhet', form)
       .then(() => {
         alert('Inscription envoyée avec succès ! Vous allez être redirigé vers le paiement.');
         window.location.href = 'paiement.html';
