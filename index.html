@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BHM Master Class – L’Art Éloquent de Briller</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bleu: #00AEEF;
+      --rose: #EC008C;
+      --gris-fond: #f9f9fb;
+      --noir: #222;
+      --blanc: #fff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--gris-fond);
+      color: var(--noir);
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(to right, var(--bleu), var(--rose));
+      padding: 60px 20px 40px;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .logo-container {
+      background-color: white;
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+      animation: pop 1s ease forwards;
+    }
+
+    .logo-container img {
+      width: 80%;
+    }
+
+    header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      animation: fadeInDown 1.2s ease;
+    }
+
+    header h2 {
+      font-size: 1.3em;
+      font-weight: 400;
+      animation: fadeInDown 1.4s ease;
+    }
+
+    section.container {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+      animation: fadeInUp 1.3s ease;
+    }
+
+    p {
+      margin-bottom: 20px;
+      font-size: 1.1em;
+      color: #333;
+    }
+
+    .highlight {
+      color: var(--rose);
+      font-weight: 600;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      background-color: var(--rose);
+      color: white;
+      padding: 15px 35px;
+      border-radius: 30px;
+      font-size: 1.1em;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #b9006c;
+      transform: translateY(-2px);
+    }
+
+    .image-section {
+      width: 100%;
+      padding: 0;
+      margin-top: 40px;
+    }
+
+    .image-wrapper {
+      overflow: hidden;
+      max-height: 480px;
+      border-radius: 15px;
+      margin: 0 auto;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      transition: transform 0.5s ease;
+      width: 90%;
+    }
+
+    .image-wrapper img {
+      width: 100%;
+      display: block;
+      transition: transform 0.8s ease;
+      object-fit: cover;
+    }
+
+    .image-wrapper:hover img {
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: var(--bleu);
+      color: white;
+      text-align: center;
+      padding: 25px 10px;
+      font-size: 0.95em;
+      margin-top: 50px;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0.7); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 1.8em; }
+      header h2 { font-size: 1.1em; }
+      .btn { padding: 12px 25px; font-size: 1em; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-container">
+      <img src="logo.png" alt="Logo BHM">
+    </div>
+    <h1>BHM Master Class</h1>
+    <h2>L’Art Éloquent de Briller</h2>
+  </header>
+
+  <section class="container">
+    <p>
+      La parole est un souffle, une danse d’idées qui sculpte les destinées.
+      Elle porte en elle le pouvoir d’émouvoir, de convaincre et de conduire.
+      Mais maîtriser cet art, c’est dompter un feu sacré.
+    </p>
+    <p>
+      Voici <span class="highlight">la BHM Master Class</span>, une formation d’exception en <strong>maîtrise de cérémonie et présentation</strong>,
+      portée par le label <strong>BHM Communication</strong>, dirigé par <strong>Mahouzonsou Bienvenu HOUSSOU</strong>, un professionnel aguerri de
+      plus de <strong>15 ans d’expérience</strong>.
+    </p>
+    <p>
+      Du <strong>04 août au 04 septembre 2025</strong>, dans l’écrin prestigieux de la <strong>Fondation Alexis Milido</strong>
+      (Porto-Novo, Malanhoui, Tanmey, Adjarra), vivez <strong>80 heures intensives</strong> de formation réparties en <strong>8 modules</strong>,
+      dispensées par des experts béninois reconnus localement et internationalement.
+    </p>
+    <p>
+      Ici, nous ne formons pas des orateurs, mais des <span class="highlight">architectes de la parole</span>, des leaders dont la voix inspire et transforme.
+    </p>
+
+    <a href="formulaire.html" class="btn">S’inscrire maintenant</a>
+  </section>
+
+  <section class="image-section">
+    <div class="image-wrapper">
+      <img src="imag.jpg" alt="Personnes tenant un micro">
+    </div>
+  </section>
+
+  <footer>
+    <p>Contact : 01 96630219 / 01 41982642</p>
+    <p>Lieu : Fondation Alexis Milido, à 100m de l’École Publique de Tanmey</p>
+    <p>© 2025 BHM Communication - Service • Efficacité • Élégance</p>
+  </footer>
+
+</body>
+</html>
