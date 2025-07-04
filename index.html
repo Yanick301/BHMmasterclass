@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="fr">
+<!DOCTYPE html>
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,167 +12,173 @@
       --gris-fond: #f9f9fb;
       --noir: #222;
       --blanc: #fff;
-    }* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    }
 
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: var(--gris-fond);
-  color: var(--noir);
-  line-height: 1.7;
-  transition: background 0.3s ease, color 0.3s ease;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body.dark {
-  background-color: #1e1e1e;
-  color: #f0f0f0;
-}
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--gris-fond);
+      color: var(--noir);
+      line-height: 1.7;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
 
-header {
-  background: linear-gradient(to right, var(--bleu), var(--rose));
-  padding: 60px 20px 40px;
-  text-align: center;
-  color: white;
-  position: relative;
-}
+    body.dark {
+      background-color: #1e1e1e;
+      color: #f0f0f0;
+    }
 
-.cover-image {
-  width: 100%;
-  max-width: 600px;
-  height: auto;
-  margin: 0 auto 20px;
-  cursor: pointer;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
+    header {
+      background: linear-gradient(to right, var(--bleu), var(--rose));
+      padding: 60px 20px 40px;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
 
-.logo-container {
-  background-color: white;
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  margin: 0 auto 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
-}
+    .cover-image {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      margin: 0 auto 20px;
+      cursor: pointer;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
 
-.logo-container img {
-  width: 80%;
-}
+    .logo-container {
+      background-color: white;
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    }
 
-header h1 {
-  font-family: 'DM Serif Display', serif;
-  font-size: 2.8em;
-  margin-bottom: 5px;
-}
+    .logo-container img {
+      width: 80%;
+    }
 
-header h2 {
-  font-size: 1.6em;
-  font-weight: 400;
-}
+    header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.8em;
+      margin-bottom: 5px;
+    }
 
-section.container {
-  padding: 50px 20px;
-  max-width: 1000px;
-  margin: auto;
-  text-align: center;
-}
+    header h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2em;
+      font-weight: normal;
+      margin-top: 10px;
+    }
 
-section.container p {
-  margin-bottom: 25px;
-  font-size: 1.1em;
-}
+    section.container {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
 
-.highlight {
-  color: var(--rose);
-  font-weight: 600;
-}
+    section.container p {
+      margin-bottom: 25px;
+      font-size: 1.1em;
+    }
 
-.btn {
-  display: inline-block;
-  margin-top: 30px;
-  background-color: var(--rose);
-  color: white;
-  padding: 15px 35px;
-  border-radius: 30px;
-  font-size: 1.1em;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
+    .highlight {
+      color: var(--rose);
+      font-weight: 600;
+    }
 
-.btn:hover {
-  background-color: #b9006c;
-}
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      background-color: var(--rose);
+      color: white;
+      padding: 15px 35px;
+      border-radius: 30px;
+      font-size: 1.1em;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
 
-.info-section, .conditions-section {
-  max-width: 1000px;
-  margin: 50px auto;
-  background: white;
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-}
+    .btn:hover {
+      background-color: #b9006c;
+    }
 
-.info-section h3, .conditions-section h3 {
-  font-size: 1.8em;
-  color: var(--bleu);
-  margin-bottom: 20px;
-  font-family: 'DM Serif Display', serif;
-}
+    .info-section, .conditions-section {
+      max-width: 1000px;
+      margin: 50px auto;
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
 
-.info-section ul, .conditions-section ul {
-  list-style: none;
-  padding-left: 0;
-}
+    .info-section h3, .conditions-section h3 {
+      font-size: 1.8em;
+      color: var(--bleu);
+      margin-bottom: 20px;
+      font-family: 'DM Serif Display', serif;
+    }
 
-.info-section li::before, .conditions-section li::before {
-  content: '\2713';
-  color: var(--rose);
-  margin-right: 10px;
-}
+    .info-section ul, .conditions-section ul {
+      list-style: none;
+      padding-left: 0;
+    }
 
-footer {
-  background-color: var(--bleu);
-  color: white;
-  text-align: center;
-  padding: 25px 10px;
-  font-size: 0.95em;
-}
+    .info-section li::before, .conditions-section li::before {
+      content: '\2713';
+      color: var(--rose);
+      margin-right: 10px;
+    }
 
-/* WhatsApp Floating */
-.whatsapp-float {
-  position: fixed;
-  bottom: 25px;
-  right: 20px;
-  z-index: 100;
-}
+    footer {
+      background-color: var(--bleu);
+      color: white;
+      text-align: center;
+      padding: 25px 10px;
+      font-size: 0.95em;
+    }
 
-.whatsapp-float a {
-  background-color: #25d366;
-  color: white;
-  font-size: 20px;
-  padding: 12px 20px;
-  border-radius: 50px;
-  text-decoration: none;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
+    /* WhatsApp Floating */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 20px;
+      z-index: 100;
+    }
 
+    .whatsapp-float a {
+      background-color: #25d366;
+      color: white;
+      font-size: 20px;
+      padding: 12px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
   </style>
 </head>
 <body>
+
   <header>
     <img src="affiche.jpg" alt="Affiche BHM Master Class" class="cover-image" />
     <div class="logo-container">
       <img src="logo.png" alt="Logo BHM">
     </div>
     <h1>BHM Master Class</h1>
-    <h2>L'Art Éloquent de Briller</h2>
-  </header>  <section class="container">
+    <h2>L’Art Éloquent de Briller</h2>
+  </header>
+
+  <section class="container">
     <p>
       La parole est un souffle, une danse d'idées qui sculpte les destinées. Elle porte en elle le pouvoir
       d'émouvoir, de convaincre et de conduire. Mais maîtriser cet art, c'est dompter un feu sacré.
@@ -184,7 +191,9 @@ footer {
       Du <strong>04 août au 04 septembre 2025</strong>, vivez <strong>80 heures intensives</strong> à la <strong>Fondation Alexis Milido</strong>, Porto-Novo.
     </p>
     <a href="formulaire.html" class="btn">S'inscrire maintenant</a>
-  </section>  <section class="conditions-section">
+  </section>
+
+  <section class="conditions-section">
     <h3>Conditions de Participation</h3>
     <ul>
       <li><strong>Baccalauréat requis</strong> (ou équivalent)</li>
@@ -194,7 +203,9 @@ footer {
       <li><strong>Assiduité obligatoire</strong> pour tous les modules</li>
       <li><strong>Projet final</strong> : présentation orale évaluée</li>
     </ul>
-  </section>  <section class="info-section">
+  </section>
+
+  <section class="info-section">
     <h3>Informations Pratiques</h3>
     <ul>
       <li><strong>Dossier à fournir</strong> : CV, acte de naissance, diplôme, 2 photos, fiche d'inscription</li>
@@ -206,18 +217,26 @@ footer {
       <li><strong>Email</strong> : houssoubienvenu96@gmail.com</li>
       <li><strong>Contact</strong> : 229 0196630219 / 01 41982642</li>
     </ul>
-  </section>  <footer>
+  </section>
+
+  <footer>
     <p>Contact : 01 96630219 / 01 41982642</p>
     <p>Lieu : Fondation Alexis Milido, à 100m de l'École Publique de Tanmey</p>
     <p>© 2025 BHM Communication - Service • Efficacité • Élégance</p>
-  </footer>  <div class="whatsapp-float">
+  </footer>
+
+  <div class="whatsapp-float">
     <a href="https://wa.me/22996630219?text=Bonjour%2C+j'aimerais+avoir+des+informations+sur+la+BHM+Master+Class+%E2%80%93+L%E2%80%99Art+%C3%89loquent+de+Briller" target="_blank">WhatsApp</a>
-  </div>  <script>
-    // Toggle dark mode on keyboard press (optional)
+  </div>
+
+  <script>
+    // Option : mode sombre avec la touche "d"
     window.addEventListener('keydown', (e) => {
       if (e.key === 'd') {
         document.body.classList.toggle('dark');
       }
     });
-  </script></body>
+  </script>
+
+</body>
 </html>
