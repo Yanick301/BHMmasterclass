@@ -113,40 +113,52 @@
   <div class="container">
     <h2>Frais d’inscription à la BHM MasterClass</h2>
     <div class="amount">5.000 FCFA</div>
-    <button id="pay-btn">Payer avec FedaPay</button>
+    <button id="pay-btn">Payer avec CinetPay</button>
   </div>
 
   <footer>
     <p>© 2025 BHM Communication</p>
   </footer>
 
-  <!-- SDK FedaPay -->
-  <script src="https://cdn.fedapay.com/checkout.js"></script>
+  <!-- SDK CINETPAY -->
+  <script src="https://checkout.cinetpay.com/cinetpay.js"></script>
 
   <script>
     document.getElementById('pay-btn').addEventListener('click', function () {
-      FedaPay.init({
-        public_key: "pk_live_wqu1xyMAq-UoOmKioBNQhQwh",
-        transaction: {
-          amount: 5000,
-          description: "Paiement pour la BHM Master Class",
-          currency: {
-            iso: "XOF"
-          }
-        },
-        customer: {
-          firstname: "Client",
-          lastname: "BHM",
-          email: "client@example.com"
-        },
-        onComplete: function (response) {
-          if (response.status === 'approved') {
-            // Redirection vers reçu.html après paiement validé
-            window.location.href = "reçu.html";
-          } else {
-            alert("Paiement annulé ou non approuvé.");
-          }
+      CinetPay.setConfig({
+        apikey: "149488272268684868cf3cf8.55959676", // Clé API CinetPay
+        site_id: "105900759", // Ton site ID
+        notify_url: "https://ton-site.com/notify", // À personnaliser si tu veux un retour serveur
+        mode: "PRODUCTION" // ou "TEST" pour tester
+      });
+
+      const transaction_id = "BHM" + Date.now();
+
+      CinetPay.getCheckout({
+        transaction_id: transaction_id,
+        amount: 5000,
+        currency: "XOF",
+        channels: "ALL",
+        description: "Inscription BHM Master Class",
+        customer_name: "Martin",
+        customer_surname: "Djosse",
+        customer_email: "martinddm301@gmail.com",
+        customer_phone_number: "22996630219"
+      });
+
+      CinetPay.waitResponse(function(data) {
+        console.log(data);
+        if (data.status === "ACCEPTED") {
+          alert("✅ Paiement réussi !");
+          window.location.href = "reçu.html"; // ou redirection WhatsApp
+        } else {
+          alert("❌ Paiement annulé ou refusé.");
         }
+      });
+
+      CinetPay.onError(function(data) {
+        console.error(data);
+        alert("Erreur lors du paiement. Veuillez réessayer.");
       });
     });
   </script>
