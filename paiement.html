@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Paiement – BHM Master Class</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bleu: #00AEEF;
+      --rose: #EC008C;
+      --gris: #f9f9fb;
+      --noir: #222;
+      --blanc: #fff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--gris);
+      color: var(--noir);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(to right, var(--bleu), var(--rose));
+      padding: 50px 20px 30px;
+      text-align: center;
+      color: white;
+    }
+
+    .logo-container {
+      background-color: white;
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-container img {
+      width: 75%;
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2em;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+
+    .container h2 {
+      color: var(--rose);
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+
+    .amount {
+      font-size: 2em;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: var(--bleu);
+    }
+
+    .whatsapp-btn {
+      background-color: #25d366;
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.1em;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s ease;
+    }
+
+    .whatsapp-btn:hover {
+      background-color: #1ebe5d;
+    }
+
+    footer {
+      background: var(--bleu);
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-container">
+      <img src="logo.png" alt="Logo BHM">
+    </div>
+    <h1>Paiement d’inscription</h1>
+  </header>
+
+  <div class="container">
+    <h2>Merci pour votre inscription à la BHM Master Class</h2>
+    <p>Pour finaliser votre inscription, cliquez ci-dessous pour recevoir les instructions de paiement par WhatsApp.</p>
+    <div class="amount">Montant à payer : 5.000 FCFA</div>
+
+    <a class="whatsapp-btn" href="https://wa.me/22996630219?text=Bonjour%2C+je+viens+de+m%27inscrire+à+la+BHM+Master+Class+et+je+souhaite+procéder+au+paiement+de+mon+inscription." target="_blank">
+      Payer maintenant via WhatsApp
+    </a>
+  </div>
+
+  <footer>
+    <p>© 2025 BHM Communication</p>
+  </footer>
+
+</body>
+</html>
